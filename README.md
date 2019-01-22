@@ -2,9 +2,16 @@ Grégoria Ndongozi-Nsabimana
 Alexis Janin 
 
 Git link : https://github.com/alexdji/scrapp_excel
-Key link : 
+Key link (add "Y" in URL): https://we.tl/t-zFygBalL9 Y
+Spreadsheet public link : https://docs.google.com/spreadsheets/d/1DF0VJ0nnbEruorsHzzWL0hu7XYJWSJAXUeiBUNwySiU/edit?usp=sharing
+Spreadsheet link : https://docs.google.com/spreadsheets/d/1DF0VJ0nnbEruorsHzzWL0hu7XYJWSJAXUeiBUNwySiU/edit#gid=0
 
-Simply run app.rb 
+Simply  : 
+- add config.json at file root
+- run $ bundle install
+- run $ ruby app.rb
+
+app.rb : 
 
 class Scrapper
 	def initialize
