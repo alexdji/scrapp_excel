@@ -1,22 +1,9 @@
-require "google_drive"
+require 'bundler'
+require 'csv'
+Bundler.require
 
-# Creates a session. This will prompt the credential via command line for the
-# first time and save it to config.json file for later usages.
-# See this document to learn how to create config.json:
-# https://github.com/gimite/google-drive-ruby/blob/master/doc/authorization.md
-session = GoogleDrive::Session.from_config("config.json")
+$:.unshift File.expand_path("./../lib", __FILE__)
+require 'app/scrapper'
 
-# Gets list of remote files.
-session.files.each do |file|
-  p file.title
-end
 
-# Uploads a local file.
-session.upload_from_file("/Play_Exel/db/", "emails.json", convert: false)
-
-# Downloads to a local file.
-file = session.file_by_title("emails.json")
-file.download_to_file("/Play_Exel/db/emails.json")
-
-# Updates content of the remote file.
-file.update_from_file("Play_Exel/db/emails.json")
+Val_Oise = Scrapper.new("http://annuaire-des-mairies.com/val-d-oise.html").perform
